@@ -1,3 +1,7 @@
+# Folders #
+/out
+
+# Compiled Code #
 *.class
 
 # Package Files #
