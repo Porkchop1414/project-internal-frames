@@ -98,5 +98,6 @@ public class Project extends JApplet implements ActionListener {
     frame.add(demo);
     demo.init();
     demo.start();
+    frame.setVisible(true); // This is to appease Jordan's messed up Java
   }
 }
