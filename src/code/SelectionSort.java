@@ -3,6 +3,12 @@ package code;
 import java.util.ArrayList;
 import java.util.Collections;
 
+/**
+ * Selection sort implementation of a VisualizableSort
+ *
+ * @author Alex Wright, Jordan Schlechte, Tyler Catanzaro
+ * @version 1.0
+ */
 public class SelectionSort extends VisualizableSort {
 
   public SelectionSort() {
@@ -10,11 +16,18 @@ public class SelectionSort extends VisualizableSort {
     
   }
   
+  /**
+   * Runs the sort on the data.
+   */
   @Override
   public void run() {
     // TODO: Implement this.
   }
   
+  /**
+   * Selectionsort Implementation
+   * @param array The ArrayList to be sorted in place.
+   */
   private void selectionSort(ArrayList<Integer> array) {
     int iMin;
     

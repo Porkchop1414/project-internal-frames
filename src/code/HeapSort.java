@@ -3,6 +3,12 @@ package code;
 import java.util.ArrayList;
 import java.util.Collections;
 
+/**
+ * Heap sort implementation of a VisualizableSort
+ *
+ * @author Alex Wright, Jordan Schlechte, Tyler Catanzaro
+ * @version 1.0
+ */
 public class HeapSort extends VisualizableSort {
   
   public HeapSort() {
@@ -10,11 +16,18 @@ public class HeapSort extends VisualizableSort {
     
   }
   
+  /**
+   * Runs the sort on the data.
+   */
   @Override
   public void run() {
     // TODO: Implement this.
   }
   
+  /**
+   * Heapsort Implementation
+   * @param array The ArrayList to be sorted in place.
+   */
   private void heapSort(ArrayList<Integer> array) {
     heapify(array);
     
@@ -26,6 +39,10 @@ public class HeapSort extends VisualizableSort {
     }
   }
   
+  /**
+   * Arranges an ArrayList in heap form.
+   * @param array The ArrayList to be placed in heap order.
+   */
   private void heapify(ArrayList<Integer> array) {
     int start = (array.size() - 2) / 2;
     
@@ -35,6 +52,12 @@ public class HeapSort extends VisualizableSort {
     }
   }
   
+  /**
+   * Sifts the ArrayList being heapified
+   * @param array The ArrayList being operated on.
+   * @param start Start of the sift segment.
+   * @param end End of the sift segment.
+   */
   private void siftDown(ArrayList<Integer> array, int start, int end) {
     int root = start;
     

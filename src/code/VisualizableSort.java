@@ -18,6 +18,11 @@ public abstract class VisualizableSort implements Runnable {
    * ArrayList of data to be sorted in place.
    */
   protected ArrayList<Integer> mData;
+  
+  /**
+   * Number of milliseconds to sleep between sort iterations.
+   */
+  public static volatile int sleepDuration = 500;
 
   public VisualizableSort() {
 
