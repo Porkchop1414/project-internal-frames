@@ -6,6 +6,7 @@ import java.util.Collections;
 public class SelectionSort extends VisualizableSort {
 
   public SelectionSort() {
+    super();
     
   }
   
