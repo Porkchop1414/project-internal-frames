@@ -19,8 +19,7 @@ public class InsertionSort extends VisualizableSort {
    */
   @Override
   public void run() {
-    // TODO Auto-generated method stub
-    insertionSort(mData);
+ // TODO: Implement this.
   }
 
   /**
