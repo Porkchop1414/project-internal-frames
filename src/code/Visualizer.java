@@ -17,12 +17,12 @@ import java.util.Observer;
 public class Visualizer extends JPanel implements Observer {
 
   /**
-   *
+   * This is the VisualizableSort that will be displayed.
    */
   protected VisualizableSort data;
 
   /**
-   *
+   * This is the ArrayList that is being displayed.
    */
   protected ArrayList<Integer> list;
 
@@ -38,7 +38,7 @@ public class Visualizer extends JPanel implements Observer {
   }
 
   /**
-   *
+   * Unregisters the observer.
    */
   public void close() {
     if (data != null) {
@@ -48,6 +48,7 @@ public class Visualizer extends JPanel implements Observer {
   }
 
   /**
+   * Update used to allow the sorts to call Visualizer's repaint directly.
    *
    * @param o
    * @param arg
@@ -58,6 +59,7 @@ public class Visualizer extends JPanel implements Observer {
   }
 
   /**
+   * Used to draw the graph that visually represents the data being sorted.
    *
    * @param g
    */
@@ -67,6 +69,7 @@ public class Visualizer extends JPanel implements Observer {
 
     int width = Math.max(getWidth(),list.size());
     int height = getHeight()-10;
+    
     //For loop that sets the color of graphics to yellow if it was the last
     //changed index, otherwise blue, and then draws a filled rectangle the
     //height of the value in the arraylist.
