@@ -17,12 +17,12 @@ import java.util.Observer;
 public class Visualizer extends JPanel implements Observer {
 
   /**
-   *
+   * This is the VisualizableSort that will be displayed.
    */
   protected VisualizableSort data;
 
   /**
-   *
+   * This is the ArrayList that is being displayed.
    */
   protected ArrayList<Integer> list;
 
@@ -31,14 +31,12 @@ public class Visualizer extends JPanel implements Observer {
     //Constructor initializes member variables
     data = sort;
 
-    add(new JLabel(data.getName()));
-
     data.addObserver(this);
     list = sort.getData();
   }
 
   /**
-   *
+   * Unregisters the observer.
    */
   public void close() {
     if (data != null) {
@@ -48,6 +46,7 @@ public class Visualizer extends JPanel implements Observer {
   }
 
   /**
+   * Update used to allow the sorts to call Visualizer's repaint directly.
    *
    * @param o
    * @param arg
@@ -58,6 +57,7 @@ public class Visualizer extends JPanel implements Observer {
   }
 
   /**
+   * Used to draw the graph that visually represents the data being sorted.
    *
    * @param g
    */
@@ -66,7 +66,7 @@ public class Visualizer extends JPanel implements Observer {
     super.paintComponent(g);
 
     int width = Math.max(getWidth(),list.size());
-    int height = getHeight()-10;
+    int height = getHeight() - 40;
     //For loop that sets the color of graphics to yellow if it was the last
     //changed index, otherwise blue, and then draws a filled rectangle the
     //height of the value in the arraylist.
@@ -83,7 +83,9 @@ public class Visualizer extends JPanel implements Observer {
 
       g.setColor(indexChanged ? Color.RED : Color.BLUE);
 
-      g.fillRect(i * (width / list.size()) + 10, height - list.get(i), width / list.size(), list.get(i));
+      int rectHeight = (int)(height * (list.get(i) / 100.0f));
+      int rectWidth = (width / list.size());
+      g.fillRect(i * rectWidth + 10, height - rectHeight + 20, rectWidth, rectHeight);
     }
     g.setColor(Color.BLACK);
   }

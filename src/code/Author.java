@@ -11,8 +11,25 @@ import java.awt.*;
  * @version 1.0
  */
 public class Author extends JInternalFrame {
+
+  /**
+   * Fonts for displaying text.
+   */
   Font normal, bold, bigNormal, bigBold;
-  int stringWidth, y;
+
+  /**
+   * Holds the width of the last string drawn.
+   */
+  int stringWidth;
+
+  /**
+   * Hold the y value of the next string to be drawn.
+   */
+  int y;
+
+  /**
+   * The string to be drawn.
+   */
   String string;
 
   /**

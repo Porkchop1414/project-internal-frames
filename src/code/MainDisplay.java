@@ -23,11 +23,34 @@ import java.util.concurrent.Executors;
  */
 public class MainDisplay extends JInternalFrame implements ActionListener, ChangeListener {
 
+  /**
+   * JPanels for displaying the sort visualizers.
+   */
   private List<JPanel> sortPanels;
+
+  /**
+   * JButtons for controlling the sort visualizations.
+   */
   private JButton startButton, resetButton;
+
+  /**
+   * JSliders for controlling the size of data set and the speed of simulation.
+   */
   private JSlider sizeSlider, speedSlider;
+
+  /**
+   * TitledBorders for the sliders.
+   */
   private TitledBorder sizeSliderBorder, speedSliderBorder;
+
+  /**
+   * The selected case for data for the sort.
+   */
   private DataType selectedDataType;
+
+  /**
+   * ArrayList of integers to sort.
+   */
   private ArrayList<Integer> dataSet;
   private List<JCheckBoxMenuItem> sorts;
 
@@ -126,6 +149,10 @@ public class MainDisplay extends JInternalFrame implements ActionListener, Chang
     }
   }
 
+  /**
+   * Sets the data type for the sort.
+   * @param dataType The DataType for the sort.
+   */
   public void setDataType(DataType dataType) {
     selectedDataType = dataType;
   }
