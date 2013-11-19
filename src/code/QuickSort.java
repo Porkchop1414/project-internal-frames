@@ -21,7 +21,7 @@ public class QuickSort extends VisualizableSort {
    */
   @Override
   public void run() {
-    quickSort(mData,0,mData.size());
+    quickSort(mData,0,mData.size()-1);
   }
 
   /**
