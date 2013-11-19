@@ -105,50 +105,9 @@ public class MainDisplay extends JInternalFrame implements ActionListener, Chang
         }
       }
 
-      remove(sortPanels.get(0));
-      remove(sortPanels.get(1));
-      remove(sortPanels.get(2));
-      sortPanels.add(0, new JPanel());
-      sortPanels.add(1, new JPanel());
-      sortPanels.add(2, new JPanel());
-      ExecutorService executorPool = Executors.newFixedThreadPool(3);
-
-      List<Integer> indexes = getSelectedSortIndexes();
-      for(int i = 0; i < indexes.size() && i < 3; i++) {
-        VisualizableSort sort = null;
-        if(indexes.get(i) == 0) {
-          sort = new BubbleSort();
-          sort.copyData(dataSet);
-        } else if(indexes.get(i) == 1) {
-          sort = new InsertionSort();
-          sort.copyData(dataSet);
-        } else if(indexes.get(i) == 2) {
-          sort = new SelectionSort();
-          sort.copyData(dataSet);
-        } else if(indexes.get(i) == 3) {
-          sort = new QuickSort();
-          sort.copyData(dataSet);
-        } else if(indexes.get(i) == 4) {
-          sort = new HeapSort();
-          sort.copyData(dataSet);
-        } else if(indexes.get(i) == 5) {
-          sort = new ShellSort();
-          sort.copyData(dataSet);
-        }
-        sortPanels.add(i, new Visualizer(sort));
-        if(sort != null) {
-          executorPool.execute(sort);
-        }
-      }
-
-      add(sortPanels.get(0));
-      add(sortPanels.get(1));
-      add(sortPanels.get(2));
-
-      validate();
-      repaint();
+      createVisualizerPanels();
     } else if (e.getSource() == resetButton) {
-
+      createVisualizerPanels();
     }
   }
 
@@ -192,5 +151,50 @@ public class MainDisplay extends JInternalFrame implements ActionListener, Chang
       indexes.add(5);
     }
     return indexes;
+  }
+
+  private void createVisualizerPanels() {
+    remove(sortPanels.get(0));
+    remove(sortPanels.get(1));
+    remove(sortPanels.get(2));
+    sortPanels.add(0, new JPanel());
+    sortPanels.add(1, new JPanel());
+    sortPanels.add(2, new JPanel());
+    ExecutorService executorPool = Executors.newFixedThreadPool(3);
+
+    List<Integer> indexes = getSelectedSortIndexes();
+    for(int i = 0; i < indexes.size() && i < 3; i++) {
+      VisualizableSort sort = null;
+      if(indexes.get(i) == 0) {
+        sort = new BubbleSort();
+        sort.copyData(dataSet);
+      } else if(indexes.get(i) == 1) {
+        sort = new InsertionSort();
+        sort.copyData(dataSet);
+      } else if(indexes.get(i) == 2) {
+        sort = new SelectionSort();
+        sort.copyData(dataSet);
+      } else if(indexes.get(i) == 3) {
+        sort = new QuickSort();
+        sort.copyData(dataSet);
+      } else if(indexes.get(i) == 4) {
+        sort = new HeapSort();
+        sort.copyData(dataSet);
+      } else if(indexes.get(i) == 5) {
+        sort = new ShellSort();
+        sort.copyData(dataSet);
+      }
+      sortPanels.add(i, new Visualizer(sort));
+      if(sort != null) {
+        executorPool.execute(sort);
+      }
+    }
+
+    add(sortPanels.get(0));
+    add(sortPanels.get(1));
+    add(sortPanels.get(2));
+
+    validate();
+    repaint();
   }
 }
