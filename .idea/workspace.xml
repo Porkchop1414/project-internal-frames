@@ -7,8 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e050ca7-b01d-4350-b798-a108dc723c32" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/code/Visualizer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/code/VisualizableSort.java" afterPath="$PROJECT_DIR$/src/code/VisualizableSort.java" />
     </list>
     <ignored path="Lab02.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,7 +37,7 @@
     <file path="/BubbleSort.java" changelist="1e050ca7-b01d-4350-b798-a108dc723c32" time="1384388613656" ignored="false" />
     <file path="/InsertionSort.java" changelist="1e050ca7-b01d-4350-b798-a108dc723c32" time="1384388540965" ignored="false" />
     <file path="/QuickSort.java" changelist="1e050ca7-b01d-4350-b798-a108dc723c32" time="1384388359340" ignored="false" />
-    <file path="/VisualizableSort.java" changelist="1e050ca7-b01d-4350-b798-a108dc723c32" time="1384388682832" ignored="false" />
+    <file path="/VisualizableSort.java" changelist="1e050ca7-b01d-4350-b798-a108dc723c32" time="1384889381432" ignored="false" />
     <file path="/a.java" changelist="1e050ca7-b01d-4350-b798-a108dc723c32" time="1384387813170" ignored="false" />
     <file path="/Visualizer.java" changelist="1e050ca7-b01d-4350-b798-a108dc723c32" time="1384488334495" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -115,10 +114,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Visualizer.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Visualizer.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/code/Visualizer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="19" selection-start="80" selection-end="80" vertical-scroll-proportion="0.11657143">
+            <state line="6" column="19" selection-start="80" selection-end="80" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -178,10 +177,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VisualizableSort.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="VisualizableSort.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/code/VisualizableSort.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="22" selection-start="557" selection-end="557" vertical-scroll-proportion="0.0">
+            <state line="3" column="0" selection-start="43" selection-end="43" vertical-scroll-proportion="0.058285713">
               <folding />
             </state>
           </provider>
@@ -218,9 +217,9 @@
         <option value="$PROJECT_DIR$/src/code/QuickSort.java" />
         <option value="$PROJECT_DIR$/src/code/InsertionSort.java" />
         <option value="$PROJECT_DIR$/src/code/BubbleSort.java" />
-        <option value="$PROJECT_DIR$/src/code/VisualizableSort.java" />
         <option value="$PROJECT_DIR$/src/code/Project.java" />
         <option value="$PROJECT_DIR$/src/code/Visualizer.java" />
+        <option value="$PROJECT_DIR$/src/code/VisualizableSort.java" />
       </list>
     </option>
   </component>
@@ -666,13 +665,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/code/VisualizableSort.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="22" selection-start="557" selection-end="557" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/code/QuickSort.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="47" column="62" selection-start="1127" selection-end="1127" vertical-scroll-proportion="0.0">
@@ -682,7 +674,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/code/Visualizer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="19" selection-start="80" selection-end="80" vertical-scroll-proportion="0.11657143">
+        <state line="6" column="19" selection-start="80" selection-end="80" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/code/VisualizableSort.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="0" selection-start="43" selection-end="43" vertical-scroll-proportion="0.058285713">
           <folding />
         </state>
       </provider>

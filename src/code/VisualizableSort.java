@@ -2,7 +2,6 @@ package code;
 
 import java.util.ArrayList;
 
-// TODO: Add some method of tracking the last change.
 // TODO: Determine how sleeping is going to work in terms of when to do it.
 
 /**
@@ -15,14 +14,19 @@ import java.util.ArrayList;
 public abstract class VisualizableSort implements Runnable {
 
   /**
+   * Number of milliseconds to sleep between sort iterations.
+   */
+  public static int sleepDuration = 500;
+
+  /**
    * ArrayList of data to be sorted in place.
    */
   protected ArrayList<Integer> mData;
-  
+
   /**
-   * Number of milliseconds to sleep between sort iterations.
+   * Index of the most recently changed element.
    */
-  public static volatile int sleepDuration = 500;
+  protected int mLatestChange = 0;
 
   public VisualizableSort() {
 
@@ -34,6 +38,10 @@ public abstract class VisualizableSort implements Runnable {
    */
   public ArrayList<Integer> getData() {
     return mData;
+  }
+
+  public int getLatestChangedIndex() {
+    return mLatestChange;
   }
 
   /**
