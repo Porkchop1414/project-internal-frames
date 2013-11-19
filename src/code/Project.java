@@ -13,11 +13,13 @@ import java.awt.event.ActionListener;
  * @version 1.0
  */
 public class Project extends JApplet implements ActionListener {
-  JMenu demosMenu, aboutMenu;
-  JMenuItem authorMenuItem, problemMenuItem, referenceMenuItem, helpMenuItem;
-  JInternalFrame author, problem, reference, help;
+  JMenu demosMenu, aboutMenu, algorithmsMenu, dataMenu;
+  JMenuItem authorMenuItem, problemMenuItem, referenceMenuItem, helpMenuItem, mainDisplayMenuItem, deselectAllMenuItem, randomMenuItem, bestMenuItem, worstMenuItem;
+  JCheckBoxMenuItem bubble, insertion, selection, quick, heap, shell;
+  JInternalFrame author, problem, reference, help, mainDisplay;
   JDesktopPane desktopPane;
   JMenuBar menuBar;
+  DataType selectedDataType;
 
   /**
    * This function is responsible for initializing the menu and panels.
@@ -48,6 +50,48 @@ public class Project extends JApplet implements ActionListener {
     helpMenuItem.addActionListener(this);
     aboutMenu.add(helpMenuItem);
 
+    algorithmsMenu = new JMenu("Algorithms");
+    demosMenu.add(algorithmsMenu);
+
+    bubble = new JCheckBoxMenuItem("Bubble Sort");
+    algorithmsMenu.add(bubble);
+
+    insertion = new JCheckBoxMenuItem("Insertion Sort");
+    algorithmsMenu.add(insertion);
+
+    selection = new JCheckBoxMenuItem("Selection Sort");
+    algorithmsMenu.add(selection);
+
+    quick = new JCheckBoxMenuItem("Quick Sort");
+    algorithmsMenu.add(quick);
+
+    heap = new JCheckBoxMenuItem("Heap Sort");
+    algorithmsMenu.add(heap);
+
+    shell = new JCheckBoxMenuItem("Shell Sort");
+    algorithmsMenu.add(shell);
+
+    deselectAllMenuItem = new JMenuItem("Deselect All");
+    deselectAllMenuItem.addActionListener(this);
+    algorithmsMenu.add(deselectAllMenuItem);
+
+    dataMenu = new JMenu("Data");
+    demosMenu.add(dataMenu);
+
+    randomMenuItem = new JMenuItem("Random");
+    dataMenu.add(randomMenuItem);
+    selectedDataType = DataType.Random;
+
+    bestMenuItem = new JMenuItem("Best");
+    dataMenu.add(bestMenuItem);
+
+    worstMenuItem = new JMenuItem("Worst");
+    dataMenu.add(worstMenuItem);
+
+    mainDisplayMenuItem = new JMenuItem("Main Display");
+    mainDisplayMenuItem.addActionListener(this);
+    demosMenu.add(mainDisplayMenuItem);
+
     desktopPane = new JDesktopPane();
     desktopPane.setBackground(Color.DARK_GRAY);
     getContentPane().add(desktopPane);
@@ -55,9 +99,8 @@ public class Project extends JApplet implements ActionListener {
     repaint();
   }
 
-
   /**
-   * Implementation of the ActionListener used in conjunction with the menu.
+   * Implementation of the ActionListener used in conjunction with the buttons.
    *
    * @param e The ActionEvent object.
    */
@@ -79,6 +122,23 @@ public class Project extends JApplet implements ActionListener {
       help = new Help(700, 500);
       desktopPane.add(help);
       help.toFront();
+    } else if(e.getSource() == mainDisplayMenuItem && (mainDisplay == null || mainDisplay.isClosed())) {
+      mainDisplay = new MainDisplay(700, 500, selectedDataType);
+      desktopPane.add(mainDisplay);
+      mainDisplay.toFront();
+    } else if(e.getSource() == deselectAllMenuItem) {
+      bubble.setSelected(false);
+      insertion.setSelected(false);
+      selection.setSelected(false);
+      quick.setSelected(false);
+      heap.setSelected(false);
+      shell.setSelected(false);
+    } else if(e.getSource() == randomMenuItem) {
+      selectedDataType = DataType.Random;
+    } else if(e.getSource() == bestMenuItem) {
+      selectedDataType = DataType.Best;
+    } else if(e.getSource() == worstMenuItem) {
+      selectedDataType = DataType.Worst;
     }
 
     repaint();
