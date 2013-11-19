@@ -25,7 +25,7 @@ public class Help extends JInternalFrame {
 
     JTextArea textArea = new JTextArea();
     textArea.setMargin(new Insets(10, 10, 10, 10));
-    getContentPane().add(new JScrollPane(textArea));
+    add(new JScrollPane(textArea));
     String str = "\nThis assignment includes three demos:\n\n";
     str = str + "1. TODO\n";
     str = str + "2. TODO\n";
@@ -35,6 +35,6 @@ public class Help extends JInternalFrame {
     textArea.setForeground(Color.CYAN);
     textArea.setFont(new Font("Arial", Font.BOLD, 16));
 
-    getContentPane().setLayout(new FlowLayout());
+    setLayout(new FlowLayout());
   }
 }

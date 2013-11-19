@@ -31,7 +31,7 @@ public class Author extends JInternalFrame {
     bigNormal = new Font("Courier", Font.PLAIN, 40);
     bigBold = new Font("SansSerif", Font.BOLD, 40);
 
-    getContentPane().setLayout(new FlowLayout());
+    setLayout(new FlowLayout());
   }
 
   /**

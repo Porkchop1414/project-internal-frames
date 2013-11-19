@@ -24,7 +24,7 @@ public class References extends JInternalFrame {
 
     JTextArea textArea = new JTextArea();
     textArea.setMargin(new Insets(10, 10, 10, 10));
-    getContentPane().add(new JScrollPane(textArea));
+    add(new JScrollPane(textArea));
     String str = "\nThis assignment uses the following only:\n\n";
     str = str+"1. Deite/Deitel Java How to Program TextBook\n";
     str = str+"2. Handouts, Example codes given in the class\n";
@@ -33,6 +33,6 @@ public class References extends JInternalFrame {
     textArea.setForeground(Color.CYAN);
     textArea.setFont(new Font("Arial", Font.BOLD,16));
 
-    getContentPane().setLayout(new FlowLayout());
+    setLayout(new FlowLayout());
   }
 }

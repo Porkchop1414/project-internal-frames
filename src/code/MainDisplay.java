@@ -11,7 +11,9 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadPoolExecutor;
 
 /**
  * An internal frame that will display up to three sorting algorithms sorting in real-time, sliders to control
@@ -28,7 +30,6 @@ public class MainDisplay extends JInternalFrame implements ActionListener, Chang
   private TitledBorder sizeSliderBorder, speedSliderBorder;
   private DataType selectedDataType;
   private ArrayList<Integer> dataSet;
-  private Executor executor;
 
   /**
    * Constructor for a Author object.
@@ -44,10 +45,9 @@ public class MainDisplay extends JInternalFrame implements ActionListener, Chang
 
     this.selectedDataType = selectedDataType;
     dataSet = new ArrayList<>();
-    executor = Executors.newFixedThreadPool(3);
 
     JPanel controlPanel = new JPanel();
-    getContentPane().add(controlPanel);
+    add(controlPanel);
 
     sizeSlider = new JSlider(1, 800, 400);
     sizeSliderBorder = new TitledBorder(new LineBorder(Color.BLUE, 10), "Array Length: " + String.valueOf(sizeSlider.getValue()), TitledBorder.CENTER, TitledBorder.TOP);
@@ -64,21 +64,21 @@ public class MainDisplay extends JInternalFrame implements ActionListener, Chang
     controlPanel.add(resetButton);
 
     speedSlider = new JSlider(1, 1000, 500);
-    speedSliderBorder = new TitledBorder(new LineBorder(Color.BLUE, 10), "Current Delay: " + String.valueOf(speedSlider.getValue()), TitledBorder.CENTER, TitledBorder.TOP);
+    speedSliderBorder = new TitledBorder(new LineBorder(Color.BLUE, 10), "Current Delay: " + String.valueOf(speedSlider.getValue()) + "ms", TitledBorder.CENTER, TitledBorder.TOP);
     speedSlider.setBorder(speedSliderBorder);
     speedSlider.addChangeListener(this);
     controlPanel.add(speedSlider);
 
-    /*sortOne = new JPanel();
-    getContentPane().add(sortOne);
+    sortOne = new JPanel();
+    add(sortOne);
 
     sortTwo = new JPanel();
-    getContentPane().add(sortTwo);
+    add(sortTwo);
 
     sortThree = new JPanel();
-    getContentPane().add(sortThree);*/
+    add(sortThree);
 
-    getContentPane().setLayout(new GridLayout(4, 1, 5, 5));
+    setLayout(new GridLayout(4, 1, 5, 5));
   }
 
   /**
@@ -98,21 +98,27 @@ public class MainDisplay extends JInternalFrame implements ActionListener, Chang
         }
       } else if(selectedDataType == DataType.Best) {
         // In order
-        for(int i = 0; i < sizeSlider.getValue(); i++) {
-          dataSet.add(i / sizeSlider.getValue());
+        for(float i = 0; i < sizeSlider.getValue(); i++) {
+          dataSet.add((int)((i / sizeSlider.getValue()) * 100));
         }
       } else if(selectedDataType == DataType.Worst) {
         // Reverse order
-        for(int i = 0; i < sizeSlider.getValue(); i++) {
-          dataSet.add(100 - (i / sizeSlider.getValue()));
+        for(float i = 0; i < sizeSlider.getValue(); i++) {
+          dataSet.add((int)(100 - ((i / sizeSlider.getValue()) * 100)));
         }
       }
+
+      remove(sortOne);
+      remove(sortTwo);
+      remove(sortThree);
+      ExecutorService executorPool = Executors.newFixedThreadPool(3);
 
       // Create visualizers here for each of the sort panels
       BubbleSort sort = new BubbleSort();
       sort.copyData(dataSet);
       sortOne = new Visualizer(sort);
-      executor.execute(sort);
+      executorPool.execute(sort);
+
 
       add(sortOne);
 
@@ -133,8 +139,12 @@ public class MainDisplay extends JInternalFrame implements ActionListener, Chang
     if (e.getSource() == sizeSlider) {
       sizeSliderBorder.setTitle("Array Length: " + String.valueOf(sizeSlider.getValue()));
     } else if (e.getSource() == speedSlider) {
-      speedSliderBorder.setTitle("Current Delay: " + String.valueOf(speedSlider.getValue()));
+      speedSliderBorder.setTitle("Current Delay: " + String.valueOf(speedSlider.getValue()) + "ms");
       VisualizableSort.sleepDuration = speedSlider.getValue();
     }
+  }
+
+  public void setDataType(DataType dataType) {
+    selectedDataType = dataType;
   }
 }

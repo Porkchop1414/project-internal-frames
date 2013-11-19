@@ -16,7 +16,8 @@ public class Project extends JApplet implements ActionListener {
   JMenu demosMenu, aboutMenu, algorithmsMenu, dataMenu;
   JMenuItem authorMenuItem, problemMenuItem, referenceMenuItem, helpMenuItem, mainDisplayMenuItem, deselectAllMenuItem, randomMenuItem, bestMenuItem, worstMenuItem;
   JCheckBoxMenuItem bubble, insertion, selection, quick, heap, shell;
-  JInternalFrame author, problem, reference, help, mainDisplay;
+  JInternalFrame author, problem, reference, help;
+  MainDisplay mainDisplay;
   JDesktopPane desktopPane;
   JMenuBar menuBar;
   DataType selectedDataType;
@@ -77,15 +78,18 @@ public class Project extends JApplet implements ActionListener {
 
     dataMenu = new JMenu("Data");
     demosMenu.add(dataMenu);
-
-    randomMenuItem = new JMenuItem("Random");
-    dataMenu.add(randomMenuItem);
     selectedDataType = DataType.Random;
 
+    randomMenuItem = new JMenuItem("Random");
+    randomMenuItem.addActionListener(this);
+    dataMenu.add(randomMenuItem);
+
     bestMenuItem = new JMenuItem("Best");
+    bestMenuItem.addActionListener(this);
     dataMenu.add(bestMenuItem);
 
     worstMenuItem = new JMenuItem("Worst");
+    worstMenuItem.addActionListener(this);
     dataMenu.add(worstMenuItem);
 
     mainDisplayMenuItem = new JMenuItem("Main Display");
@@ -94,7 +98,7 @@ public class Project extends JApplet implements ActionListener {
 
     desktopPane = new JDesktopPane();
     desktopPane.setBackground(Color.DARK_GRAY);
-    getContentPane().add(desktopPane);
+    add(desktopPane);
 
     repaint();
   }
@@ -123,7 +127,7 @@ public class Project extends JApplet implements ActionListener {
       desktopPane.add(help);
       help.toFront();
     } else if(e.getSource() == mainDisplayMenuItem && (mainDisplay == null || mainDisplay.isClosed())) {
-      mainDisplay = new MainDisplay(700, 500, selectedDataType);
+      mainDisplay = new MainDisplay(1000, 700, selectedDataType);
       desktopPane.add(mainDisplay);
       mainDisplay.toFront();
     } else if(e.getSource() == deselectAllMenuItem) {
@@ -135,10 +139,19 @@ public class Project extends JApplet implements ActionListener {
       shell.setSelected(false);
     } else if(e.getSource() == randomMenuItem) {
       selectedDataType = DataType.Random;
+      if(mainDisplay != null) {
+        mainDisplay.setDataType(selectedDataType);
+      }
     } else if(e.getSource() == bestMenuItem) {
       selectedDataType = DataType.Best;
+      if(mainDisplay != null) {
+        mainDisplay.setDataType(selectedDataType);
+      }
     } else if(e.getSource() == worstMenuItem) {
       selectedDataType = DataType.Worst;
+      if(mainDisplay != null) {
+        mainDisplay.setDataType(selectedDataType);
+      }
     }
 
     repaint();
@@ -150,7 +163,7 @@ public class Project extends JApplet implements ActionListener {
    */
   public static void main(String args[]) {
     JFrame frame = new JFrame("Project");
-    frame.setSize(800, 600);
+    frame.setSize(1200, 800);
     frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     frame.setVisible(true);
 

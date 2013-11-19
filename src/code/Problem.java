@@ -67,6 +67,6 @@ public class Problem extends JInternalFrame {
     textArea.setBorder(tBorder);
     add(new JScrollPane(textArea));
 
-    getContentPane().setLayout(new FlowLayout());
+    setLayout(new FlowLayout());
   }
 }
