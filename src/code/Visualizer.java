@@ -2,7 +2,7 @@ package code;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
+import java.util.*;
 
 public class Visualizer extends JPanel 
 {
@@ -21,13 +21,13 @@ public class Visualizer extends JPanel
     
     for(int i = 0; i < list.size(); i++)
     {
-      if(i == data.getLatestChangedIndex())
+      if(Arrays.asList(data.getLatestChanges()).contains(i))
       {
-        g.setColor(Color.BLUE);
+        g.setColor(Color.YELLOW);
       }
       else
       {
-        g.setColor(Color.YELLOW);
+        g.setColor(Color.BLUE);
       }
       g.fillRect(i * (800 / list.size()), 100 - list.get(i), 800 / list.size(), list.get(i));
     }
