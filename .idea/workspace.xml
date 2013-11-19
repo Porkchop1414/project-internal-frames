@@ -7,9 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e050ca7-b01d-4350-b798-a108dc723c32" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/code/Author.java" afterPath="$PROJECT_DIR$/src/code/Author.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/code/MainDisplay.java" afterPath="$PROJECT_DIR$/src/code/MainDisplay.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/code/Project.java" afterPath="$PROJECT_DIR$/src/code/Project.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/code/Visualizer.java" afterPath="$PROJECT_DIR$/src/code/Visualizer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Lab02.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -125,7 +126,7 @@
       <file leaf-file-name="Visualizer.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/code/Visualizer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="85" column="88" selection-start="1845" selection-end="1845" vertical-scroll-proportion="0.6786941">
+            <state line="67" column="49" selection-start="1396" selection-end="1396" vertical-scroll-proportion="1.8109965">
               <folding />
             </state>
           </provider>
@@ -134,7 +135,7 @@
       <file leaf-file-name="MainDisplay.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/code/MainDisplay.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="172" column="47" selection-start="5197" selection-end="5197" vertical-scroll-proportion="0.0">
+            <state line="24" column="0" selection-start="805" selection-end="805" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -234,8 +235,8 @@
         <option value="$PROJECT_DIR$/src/code/QuickSort.java" />
         <option value="$PROJECT_DIR$/src/code/SelectionSort.java" />
         <option value="$PROJECT_DIR$/src/code/VisualizableSort.java" />
-        <option value="$PROJECT_DIR$/src/code/MainDisplay.java" />
         <option value="$PROJECT_DIR$/src/code/Author.java" />
+        <option value="$PROJECT_DIR$/src/code/MainDisplay.java" />
         <option value="$PROJECT_DIR$/src/code/Visualizer.java" />
       </list>
     </option>
@@ -705,13 +706,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/code/MainDisplay.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="172" column="47" selection-start="5197" selection-end="5197" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/code/Author.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="30" column="28" selection-start="623" selection-end="623" vertical-scroll-proportion="0.0">
@@ -719,9 +713,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/code/MainDisplay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="0" selection-start="805" selection-end="805" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/code/Visualizer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="88" selection-start="1845" selection-end="1845" vertical-scroll-proportion="0.6786941">
+        <state line="67" column="49" selection-start="1396" selection-end="1396" vertical-scroll-proportion="1.8109965">
           <folding />
         </state>
       </provider>

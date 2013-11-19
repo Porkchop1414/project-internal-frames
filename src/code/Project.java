@@ -4,6 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * The main applet for the program. Project is responsible for displaying a menu that is used
@@ -21,6 +23,7 @@ public class Project extends JApplet implements ActionListener {
   JDesktopPane desktopPane;
   JMenuBar menuBar;
   DataType selectedDataType;
+  List<JCheckBoxMenuItem> sorts;
 
   /**
    * This function is responsible for initializing the menu and panels.
@@ -71,6 +74,14 @@ public class Project extends JApplet implements ActionListener {
 
     shell = new JCheckBoxMenuItem("Shell Sort");
     algorithmsMenu.add(shell);
+
+    sorts = new ArrayList<>();
+    sorts.add(bubble);
+    sorts.add(insertion);
+    sorts.add(selection);
+    sorts.add(quick);
+    sorts.add(heap);
+    sorts.add(shell);
 
     deselectAllMenuItem = new JMenuItem("Deselect All");
     deselectAllMenuItem.addActionListener(this);
@@ -127,7 +138,7 @@ public class Project extends JApplet implements ActionListener {
       desktopPane.add(help);
       help.toFront();
     } else if(e.getSource() == mainDisplayMenuItem && (mainDisplay == null || mainDisplay.isClosed())) {
-      mainDisplay = new MainDisplay(1000, 700, selectedDataType);
+      mainDisplay = new MainDisplay(1000, 700, selectedDataType, sorts);
       desktopPane.add(mainDisplay);
       mainDisplay.toFront();
     } else if(e.getSource() == deselectAllMenuItem) {
