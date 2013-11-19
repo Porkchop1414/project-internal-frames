@@ -2,9 +2,12 @@ package code;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Observable;
+import java.util.Observer;
 
-public class Visualizer extends JPanel {
+public class Visualizer extends JPanel implements Observer {
   /**
    * Class that extends JPanel that is responsible for drawing the
    * data in a graphical form.
@@ -17,13 +20,27 @@ public class Visualizer extends JPanel {
     super();
     //Constructor initializes member variables
     data = sort;
-    list = new ArrayList<>(sort.getData());
 
     add(new JLabel(data.getName()));
+
+    data.addObserver(this);
+    list = new ArrayList<>(sort.getData());
+  }
+
+  public void close() {
+    if (data != null) {
+      data.deleteObserver(this);
+      data = null;
+    }
   }
 
   @Override
-  protected void paintComponent(Graphics g) {
+  public void update(Observable o, Object arg) {
+    repaint();
+  }
+
+  @Override
+  public void paintComponent(Graphics g) {
     super.paintComponent(g);
 
     //For loop that sets the color of graphics to yellow if it was the last
