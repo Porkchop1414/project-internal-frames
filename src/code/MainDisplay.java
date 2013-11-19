@@ -9,11 +9,10 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
-import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadPoolExecutor;
 
 /**
  * An internal frame that will display up to three sorting algorithms sorting in real-time, sliders to control
@@ -24,12 +23,13 @@ import java.util.concurrent.ThreadPoolExecutor;
  */
 public class MainDisplay extends JInternalFrame implements ActionListener, ChangeListener {
 
-  private JPanel sortOne, sortTwo, sortThree;
+  private List<JPanel> sortPanels;
   private JButton startButton, resetButton;
   private JSlider sizeSlider, speedSlider;
   private TitledBorder sizeSliderBorder, speedSliderBorder;
   private DataType selectedDataType;
   private ArrayList<Integer> dataSet;
+  private List<JCheckBoxMenuItem> sorts;
 
   /**
    * Constructor for a Author object.
@@ -37,12 +37,13 @@ public class MainDisplay extends JInternalFrame implements ActionListener, Chang
    * @param width  the width of the panel
    * @param height the height of the panel
    */
-  public MainDisplay(int width, int height, DataType selectedDataType) {
+  public MainDisplay(int width, int height, DataType selectedDataType, List<JCheckBoxMenuItem> sorts) {
     super("Main Display", true, true, true, true);
     setSize(width, height);
     setOpaque(true);
     setVisible(true);
 
+    this.sorts = sorts;
     this.selectedDataType = selectedDataType;
     dataSet = new ArrayList<>();
 
@@ -69,14 +70,10 @@ public class MainDisplay extends JInternalFrame implements ActionListener, Chang
     speedSlider.addChangeListener(this);
     controlPanel.add(speedSlider);
 
-    sortOne = new JPanel();
-    add(sortOne);
-
-    sortTwo = new JPanel();
-    add(sortTwo);
-
-    sortThree = new JPanel();
-    add(sortThree);
+    sortPanels = new ArrayList<>();
+    sortPanels.add(new JPanel());
+    sortPanels.add(new JPanel());
+    sortPanels.add(new JPanel());
 
     setLayout(new GridLayout(4, 1, 5, 5));
   }
@@ -108,20 +105,45 @@ public class MainDisplay extends JInternalFrame implements ActionListener, Chang
         }
       }
 
-      remove(sortOne);
-      remove(sortTwo);
-      remove(sortThree);
+      remove(sortPanels.get(0));
+      remove(sortPanels.get(1));
+      remove(sortPanels.get(2));
+      sortPanels.add(0, new JPanel());
+      sortPanels.add(1, new JPanel());
+      sortPanels.add(2, new JPanel());
       ExecutorService executorPool = Executors.newFixedThreadPool(3);
 
-      // Create visualizers here for each of the sort panels
-      BubbleSort sort = new BubbleSort();
-      sort.copyData(dataSet);
-      sortOne = new Visualizer(sort);
-      sortOne.setBorder(new TitledBorder("title"));
-      executorPool.execute(sort);
+      List<Integer> indexes = getSelectedSortIndexes();
+      for(int i = 0; i < indexes.size() && i < 3; i++) {
+        VisualizableSort sort = null;
+        if(indexes.get(i) == 0) {
+          sort = new BubbleSort();
+          sort.copyData(dataSet);
+        } else if(indexes.get(i) == 1) {
+          sort = new InsertionSort();
+          sort.copyData(dataSet);
+        } else if(indexes.get(i) == 2) {
+          sort = new SelectionSort();
+          sort.copyData(dataSet);
+        } else if(indexes.get(i) == 3) {
+          sort = new QuickSort();
+          sort.copyData(dataSet);
+        } else if(indexes.get(i) == 4) {
+          sort = new HeapSort();
+          sort.copyData(dataSet);
+        } else if(indexes.get(i) == 5) {
+          sort = new ShellSort();
+          sort.copyData(dataSet);
+        }
+        sortPanels.add(i, new Visualizer(sort));
+        if(sort != null) {
+          executorPool.execute(sort);
+        }
+      }
 
-
-      add(sortOne);
+      add(sortPanels.get(0));
+      add(sortPanels.get(1));
+      add(sortPanels.get(2));
 
       validate();
       repaint();
@@ -147,5 +169,28 @@ public class MainDisplay extends JInternalFrame implements ActionListener, Chang
 
   public void setDataType(DataType dataType) {
     selectedDataType = dataType;
+  }
+
+  private List<Integer> getSelectedSortIndexes() {
+    ArrayList<Integer> indexes = new ArrayList<>();
+    if(sorts.get(0).isSelected()) {
+      indexes.add(0);
+    }
+    if(sorts.get(1).isSelected()) {
+      indexes.add(1);
+    }
+    if(sorts.get(2).isSelected()) {
+      indexes.add(2);
+    }
+    if(sorts.get(3).isSelected()) {
+      indexes.add(3);
+    }
+    if(sorts.get(4).isSelected()) {
+      indexes.add(4);
+    }
+    if(sorts.get(5).isSelected()) {
+      indexes.add(5);
+    }
+    return indexes;
   }
 }
