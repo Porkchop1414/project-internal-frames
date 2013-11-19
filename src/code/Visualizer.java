@@ -7,13 +7,23 @@ import java.util.Arrays;
 import java.util.Observable;
 import java.util.Observer;
 
+/**
+ * Class that extends JPanel that is responsible for drawing the
+ * data in a graphical form.
+ *
+ * @author Alex Wright, Jordan Schlechte, Tyler Catanzaro
+ * @version 1.0
+ */
 public class Visualizer extends JPanel implements Observer {
+
   /**
-   * Class that extends JPanel that is responsible for drawing the
-   * data in a graphical form.
+   *
    */
-  //Member Variables
   protected VisualizableSort data;
+
+  /**
+   *
+   */
   protected ArrayList<Integer> list;
 
   public Visualizer(VisualizableSort sort) {
@@ -27,6 +37,9 @@ public class Visualizer extends JPanel implements Observer {
     list = sort.getData();
   }
 
+  /**
+   *
+   */
   public void close() {
     if (data != null) {
       data.deleteObserver(this);
@@ -34,15 +47,26 @@ public class Visualizer extends JPanel implements Observer {
     }
   }
 
+  /**
+   *
+   * @param o
+   * @param arg
+   */
   @Override
   public void update(Observable o, Object arg) {
     repaint();
   }
 
+  /**
+   *
+   * @param g
+   */
   @Override
   public void paintComponent(Graphics g) {
     super.paintComponent(g);
 
+    int width = Math.max(getWidth(),list.size());
+    int height = getHeight()-10;
     //For loop that sets the color of graphics to yellow if it was the last
     //changed index, otherwise blue, and then draws a filled rectangle the
     //height of the value in the arraylist.
@@ -59,7 +83,7 @@ public class Visualizer extends JPanel implements Observer {
 
       g.setColor(indexChanged ? Color.RED : Color.BLUE);
 
-      g.fillRect(i * (800 / list.size()), 100 - list.get(i), 800 / list.size(), list.get(i));
+      g.fillRect(i * (width / list.size()) + 10, height - list.get(i), width / list.size(), list.get(i));
     }
     g.setColor(Color.BLACK);
   }
