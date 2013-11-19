@@ -21,7 +21,7 @@ public class QuickSort extends VisualizableSort {
    */
   @Override
   public void run() {
-    // TODO: Implement this.
+    quickSort(mData,0,mData.size());
   }
 
   /**
@@ -50,14 +50,26 @@ public class QuickSort extends VisualizableSort {
   private int partition(ArrayList<Integer> array, int left, int right, int pivotIndex) {
     int pivotValue = array.get(pivotIndex);
     Collections.swap(array, pivotIndex, right);
+
+    // Sleep on our change.
+    this.sortSleep(pivotIndex);
+
     int storeIndex = left;
     for(int i=left; i<right; i++) {
       if(array.get(i) <= pivotValue) {
         Collections.swap(array,i,storeIndex);
+
+        // Sleep on our change.
+        this.sortSleep(storeIndex);
+
         storeIndex++;
       }
     }
     Collections.swap(array, storeIndex, right);
+
+    // Sleep on our change.
+    this.sortSleep(storeIndex);
+
     return storeIndex;
   }
   

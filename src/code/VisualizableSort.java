@@ -2,8 +2,6 @@ package code;
 
 import java.util.ArrayList;
 
-// TODO: Determine how sleeping is going to work in terms of when to do it.
-
 /**
  * VisualizableSort is an abstract base class which enables a sorting algorithm to expose
  * its data whilst sorting in place, for visualization purposes.
@@ -26,10 +24,28 @@ public abstract class VisualizableSort implements Runnable {
   /**
    * Index of the most recently changed element.
    */
-  protected int mLatestChange = 0;
+  private int mLatestChange = 0;
 
   public VisualizableSort() {
 
+  }
+
+  /**
+   * Causes the sort to sleep and updates the latest changed index.
+   * @param changedIndex The index of the most recently changed element.
+   */
+  protected void sortSleep(int changedIndex) {
+    // Update the latest changed index.
+    if(changedIndex >= 0 && changedIndex <= mData.size()) {
+      mLatestChange = changedIndex;
+    }
+
+    // Sleep for the configured amount of time.
+    try {
+      Thread.sleep(sleepDuration);
+    } catch (InterruptedException e) {
+      // Do nothing. We don't really care.
+    }
   }
 
   /**

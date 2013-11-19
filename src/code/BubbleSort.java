@@ -22,7 +22,7 @@ public class BubbleSort extends VisualizableSort {
    */
   @Override
   public void run() {
-    // TODO: Implement this.
+    bubbleSort(mData);
   }
 
   /**
@@ -37,6 +37,10 @@ public class BubbleSort extends VisualizableSort {
         if(array.get(i-1) > array.get(i)) {
           Collections.swap(array, i-1, i);
           swapped = true;
+
+          // Sleep on our change.
+          this.sortSleep(i);
+
         }
       }
     } while (swapped);
