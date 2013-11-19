@@ -52,7 +52,7 @@ public class QuickSort extends VisualizableSort {
     Collections.swap(array, pivotIndex, right);
 
     // Sleep on our change.
-    this.sortSleep(pivotIndex);
+    this.sortSleep(pivotIndex, right);
 
     int storeIndex = left;
     for(int i=left; i<right; i++) {
@@ -60,7 +60,7 @@ public class QuickSort extends VisualizableSort {
         Collections.swap(array,i,storeIndex);
 
         // Sleep on our change.
-        this.sortSleep(storeIndex);
+        this.sortSleep(i, storeIndex);
 
         storeIndex++;
       }
@@ -68,7 +68,7 @@ public class QuickSort extends VisualizableSort {
     Collections.swap(array, storeIndex, right);
 
     // Sleep on our change.
-    this.sortSleep(storeIndex);
+    this.sortSleep(storeIndex, right);
 
     return storeIndex;
   }

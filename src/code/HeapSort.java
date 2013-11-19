@@ -36,7 +36,7 @@ public class HeapSort extends VisualizableSort {
       Collections.swap(array, 0, end);
 
       // Sleep on our change.
-      this.sortSleep(end);
+      this.sortSleep(0, end);
 
       end--;
       siftDown(array,0,end);
@@ -79,11 +79,11 @@ public class HeapSort extends VisualizableSort {
       
       if(swap != root) {
         Collections.swap(array, swap, root);
-        root = swap;
 
         // Sleep on our change.
-        this.sortSleep(swap);
+        this.sortSleep(swap, root);
 
+        root = swap;
       } else {
         return;
       }
