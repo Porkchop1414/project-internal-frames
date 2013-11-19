@@ -54,6 +54,10 @@ public abstract class VisualizableSort implements Runnable {
     return mData;
   }
 
+  /**
+   * Gets the array of indexes which have most recently been changed by the sort.
+   * @return An array of indexes which have been changed most recently.
+   */
   public int[] getLatestChanges() {
     return mLatestChanges;
   }

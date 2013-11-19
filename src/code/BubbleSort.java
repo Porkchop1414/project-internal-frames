@@ -39,7 +39,7 @@ public class BubbleSort extends VisualizableSort {
           swapped = true;
 
           // Sleep on our change.
-          this.sortSleep(i);
+          this.sortSleep(i-1, i);
 
         }
       }

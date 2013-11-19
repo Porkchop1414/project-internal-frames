@@ -43,7 +43,7 @@ public class SelectionSort extends VisualizableSort {
         Collections.swap(array, iMin, j);
 
         // Sleep on our change.
-        this.sortSleep(j);
+        this.sortSleep(iMin, j);
 
       }
     }  
