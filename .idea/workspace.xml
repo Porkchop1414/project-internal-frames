@@ -7,13 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e050ca7-b01d-4350-b798-a108dc723c32" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/code/BubbleSort.java" afterPath="$PROJECT_DIR$/src/code/BubbleSort.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/code/HeapSort.java" afterPath="$PROJECT_DIR$/src/code/HeapSort.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/code/InsertionSort.java" afterPath="$PROJECT_DIR$/src/code/InsertionSort.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/code/QuickSort.java" afterPath="$PROJECT_DIR$/src/code/QuickSort.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/code/SelectionSort.java" afterPath="$PROJECT_DIR$/src/code/SelectionSort.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/code/ShellSort.java" afterPath="$PROJECT_DIR$/src/code/ShellSort.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/code/VisualizableSort.java" afterPath="$PROJECT_DIR$/src/code/VisualizableSort.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Lab02.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,7 +38,7 @@
     <file path="/BubbleSort.java" changelist="1e050ca7-b01d-4350-b798-a108dc723c32" time="1384890618349" ignored="false" />
     <file path="/InsertionSort.java" changelist="1e050ca7-b01d-4350-b798-a108dc723c32" time="1384890872088" ignored="false" />
     <file path="/QuickSort.java" changelist="1e050ca7-b01d-4350-b798-a108dc723c32" time="1384891010482" ignored="false" />
-    <file path="/VisualizableSort.java" changelist="1e050ca7-b01d-4350-b798-a108dc723c32" time="1384890402689" ignored="false" />
+    <file path="/VisualizableSort.java" changelist="1e050ca7-b01d-4350-b798-a108dc723c32" time="1384892366123" ignored="false" />
     <file path="/a.java" changelist="1e050ca7-b01d-4350-b798-a108dc723c32" time="1384387813170" ignored="false" />
     <file path="/Visualizer.java" changelist="1e050ca7-b01d-4350-b798-a108dc723c32" time="1384488334495" ignored="false" />
     <file path="/HeapSort.java" changelist="1e050ca7-b01d-4350-b798-a108dc723c32" time="1384890767561" ignored="false" />
@@ -114,10 +109,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="VisualizableSort.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="VisualizableSort.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/code/VisualizableSort.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="26" selection-start="869" selection-end="869" vertical-scroll-proportion="0.0">
+            <state line="33" column="72" selection-start="777" selection-end="777" vertical-scroll-proportion="0.20342857">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Visualizer.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/code/Visualizer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="19" selection-start="104" selection-end="104" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -168,10 +172,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ShellSort.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ShellSort.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/code/ShellSort.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="72" selection-start="263" selection-end="263" vertical-scroll-proportion="0.23314285">
+            <state line="13" column="72" selection-start="263" selection-end="263" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#376#385#0" expanded="true" />
               </folding>
@@ -206,13 +210,13 @@
         <option value="$PROJECT_DIR$/.idea/.name" />
         <option value="$PROJECT_DIR$/src/code/Project.java" />
         <option value="$PROJECT_DIR$/src/code/Visualizer.java" />
-        <option value="$PROJECT_DIR$/src/code/VisualizableSort.java" />
         <option value="$PROJECT_DIR$/src/code/HeapSort.java" />
         <option value="$PROJECT_DIR$/src/code/BubbleSort.java" />
         <option value="$PROJECT_DIR$/src/code/InsertionSort.java" />
         <option value="$PROJECT_DIR$/src/code/QuickSort.java" />
         <option value="$PROJECT_DIR$/src/code/SelectionSort.java" />
         <option value="$PROJECT_DIR$/src/code/ShellSort.java" />
+        <option value="$PROJECT_DIR$/src/code/VisualizableSort.java" />
       </list>
     </option>
   </component>
@@ -632,20 +636,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/code/Visualizer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="19" selection-start="80" selection-end="80" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/code/VisualizableSort.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="26" selection-start="869" selection-end="869" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/code/HeapSort.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="83" column="8" selection-start="1784" selection-end="1837" vertical-scroll-proportion="0.0">
@@ -683,10 +673,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/code/ShellSort.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="72" selection-start="263" selection-end="263" vertical-scroll-proportion="0.23314285">
+        <state line="13" column="72" selection-start="263" selection-end="263" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#376#385#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/code/Visualizer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="19" selection-start="104" selection-end="104" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/code/VisualizableSort.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="72" selection-start="777" selection-end="777" vertical-scroll-proportion="0.20342857">
+          <folding />
         </state>
       </provider>
     </entry>

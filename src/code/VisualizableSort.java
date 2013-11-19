@@ -24,21 +24,19 @@ public abstract class VisualizableSort implements Runnable {
   /**
    * Index of the most recently changed element.
    */
-  private int mLatestChange = 0;
+  private int[] mLatestChanges = new int[0];
 
   public VisualizableSort() {
 
   }
 
   /**
-   * Causes the sort to sleep and updates the latest changed index.
-   * @param changedIndex The index of the most recently changed element.
+   * Causes the sort to sleep and updates the latest changed indices.
+   * @param modifiedIndices The indices of the most recently changed elements.
    */
-  protected void sortSleep(int changedIndex) {
+  protected void sortSleep(int ... modifiedIndices) {
     // Update the latest changed index.
-    if(changedIndex >= 0 && changedIndex <= mData.size()) {
-      mLatestChange = changedIndex;
-    }
+    mLatestChanges = modifiedIndices;
 
     // Sleep for the configured amount of time.
     try {
@@ -56,8 +54,8 @@ public abstract class VisualizableSort implements Runnable {
     return mData;
   }
 
-  public int getLatestChangedIndex() {
-    return mLatestChange;
+  public int[] getLatestChanges() {
+    return mLatestChanges;
   }
 
   /**
