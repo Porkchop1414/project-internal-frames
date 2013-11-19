@@ -26,7 +26,7 @@ public class ShellSort extends VisualizableSort {
    */
   @Override
   public void run() {
-    // TODO: Implement this.
+    shellSort(mData);
   }
   
   /**
@@ -40,8 +40,16 @@ public class ShellSort extends VisualizableSort {
         int j;        
         for(j = i; j >= gap && array.get(j - gap) > temp; j -= gap) {
           array.set(j, array.get(j - gap));
+
+          // Sleep on our change.
+          this.sortSleep(j);
+
         } 
         array.set(j, temp);
+
+        // Sleep on our change.
+        this.sortSleep(j);
+
       }  
     }
   }
