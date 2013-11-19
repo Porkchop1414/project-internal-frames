@@ -13,7 +13,7 @@ public class HeapSort extends VisualizableSort {
   
   public HeapSort() {
     super();
-    
+    name = "Heap Sort";
   }
   
   /**

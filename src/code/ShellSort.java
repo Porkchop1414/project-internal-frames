@@ -18,7 +18,7 @@ public class ShellSort extends VisualizableSort {
   
   public ShellSort() {
     super();
-    
+    name = "Shell Sort";
   }
   
   /**

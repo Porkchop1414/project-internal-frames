@@ -22,6 +22,11 @@ public abstract class VisualizableSort implements Runnable {
   protected ArrayList<Integer> mData;
 
   /**
+   * Name of the sort.
+   */
+  protected String name;
+
+  /**
    * Index of the most recently changed element.
    */
   private int[] mLatestChanges = new int[0];
@@ -32,9 +37,10 @@ public abstract class VisualizableSort implements Runnable {
 
   /**
    * Causes the sort to sleep and updates the latest changed indices.
+   *
    * @param modifiedIndices The indices of the most recently changed elements.
    */
-  protected void sortSleep(int ... modifiedIndices) {
+  protected void sortSleep(int... modifiedIndices) {
     // Update the latest changed index.
     mLatestChanges = modifiedIndices;
 
@@ -48,6 +54,7 @@ public abstract class VisualizableSort implements Runnable {
 
   /**
    * Gets the data which is being or will be sorted.
+   *
    * @return The ArrayList of integers being sorted.
    */
   public ArrayList<Integer> getData() {
@@ -56,6 +63,7 @@ public abstract class VisualizableSort implements Runnable {
 
   /**
    * Gets the array of indexes which have most recently been changed by the sort.
+   *
    * @return An array of indexes which have been changed most recently.
    */
   public int[] getLatestChanges() {
@@ -63,10 +71,20 @@ public abstract class VisualizableSort implements Runnable {
   }
 
   /**
+   * Gets the name of the sort.
+   *
+   * @return The name of the sort.
+   */
+  public String getName() {
+    return name;
+  }
+
+  /**
    * Sets the data to be sorted by copying the provided ArrayList
+   *
    * @param data The ArrayList to be copied.
    */
   public void copyData(ArrayList<Integer> data) {
-    mData = new ArrayList<Integer>(data);
+    mData = new ArrayList<>(data);
   }
 }

@@ -13,7 +13,7 @@ public class QuickSort extends VisualizableSort {
 
   public QuickSort() {
     super();
-    
+    name = "Quick Sort";
   }
 
   /**

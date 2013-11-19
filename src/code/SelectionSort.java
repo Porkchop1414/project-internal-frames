@@ -13,7 +13,7 @@ public class SelectionSort extends VisualizableSort {
 
   public SelectionSort() {
     super();
-    
+    name = "Selection Sort";
   }
   
   /**

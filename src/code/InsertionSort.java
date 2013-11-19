@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class InsertionSort extends VisualizableSort {
 
   public InsertionSort() {
-    
+    name = "Insertion Sort";
   }
 
   /**
