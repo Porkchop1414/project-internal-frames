@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.*;
 
-public class Visualizer extends JPanel 
+public class Visualizer extends JPanel implements Observer
 {
   /**
     Class that extends JPanel that is responsible for drawing the 
@@ -18,9 +18,23 @@ public class Visualizer extends JPanel
   {
     //Constructor initializes member variables
     data = sort;
+    data.addObserver(this);
     list = new ArrayList<Integer>(sort.getData());
   }
-  
+
+  public void close() {
+    if(data != null) {
+      data.deleteObserver(this);
+      data = null;
+    }
+  }
+
+  @Override
+  public void update(Observable o, Object arg) {
+    repaint();
+  }
+
+  @Override
   public void paintComponent(Graphics g)
   {
     super.paintComponent(g);

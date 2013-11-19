@@ -1,6 +1,7 @@
 package code;
 
 import java.util.ArrayList;
+import java.util.Observable;
 
 /**
  * VisualizableSort is an abstract base class which enables a sorting algorithm to expose
@@ -9,7 +10,7 @@ import java.util.ArrayList;
  * @author Alex Wright, Jordan Schlechte, Tyler Catanzaro
  * @version 1.0
  */
-public abstract class VisualizableSort implements Runnable {
+public abstract class VisualizableSort extends Observable implements Runnable {
 
   /**
    * Number of milliseconds to sleep between sort iterations.
@@ -26,6 +27,7 @@ public abstract class VisualizableSort implements Runnable {
    */
   private int[] mLatestChanges = new int[0];
 
+
   public VisualizableSort() {
 
   }
@@ -37,6 +39,9 @@ public abstract class VisualizableSort implements Runnable {
   protected void sortSleep(int ... modifiedIndices) {
     // Update the latest changed index.
     mLatestChanges = modifiedIndices;
+
+    // Notify the observers of the change.
+    notifyObservers();
 
     // Sleep for the configured amount of time.
     try {
