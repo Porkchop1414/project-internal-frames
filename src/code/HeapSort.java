@@ -21,7 +21,7 @@ public class HeapSort extends VisualizableSort {
    */
   @Override
   public void run() {
-    // TODO: Implement this.
+    heapSort(mData);
   }
   
   /**
@@ -34,6 +34,10 @@ public class HeapSort extends VisualizableSort {
     int end = array.size() - 1;
     while(end > 0) {
       Collections.swap(array, 0, end);
+
+      // Sleep on our change.
+      this.sortSleep(0, end);
+
       end--;
       siftDown(array,0,end);
     }
@@ -75,6 +79,10 @@ public class HeapSort extends VisualizableSort {
       
       if(swap != root) {
         Collections.swap(array, swap, root);
+
+        // Sleep on our change.
+        this.sortSleep(swap, root);
+
         root = swap;
       } else {
         return;

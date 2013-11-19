@@ -19,7 +19,7 @@ public class InsertionSort extends VisualizableSort {
    */
   @Override
   public void run() {
- // TODO: Implement this.
+    insertionSort(mData);
   }
 
   /**
@@ -32,9 +32,17 @@ public class InsertionSort extends VisualizableSort {
       int holePos = i;
       while(holePos > 0 && valueToInsert < array.get(holePos - 1)) {
         array.set(holePos, array.get(holePos - 1));
+
+        // Sleep on our change.
+        this.sortSleep(holePos);
+
         holePos = holePos - 1;
       }
       array.set(holePos, valueToInsert);
+
+      // Sleep on our change.
+      this.sortSleep(holePos);
+
     }
   }
   

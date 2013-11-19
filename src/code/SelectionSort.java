@@ -21,7 +21,7 @@ public class SelectionSort extends VisualizableSort {
    */
   @Override
   public void run() {
-    // TODO: Implement this.
+    selectionSort(mData);
   }
   
   /**
@@ -41,6 +41,10 @@ public class SelectionSort extends VisualizableSort {
       
       if(iMin != j) {
         Collections.swap(array, iMin, j);
+
+        // Sleep on our change.
+        this.sortSleep(iMin, j);
+
       }
     }  
   }

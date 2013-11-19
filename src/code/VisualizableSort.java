@@ -2,9 +2,6 @@ package code;
 
 import java.util.ArrayList;
 
-// TODO: Add some method of tracking the last change.
-// TODO: Determine how sleeping is going to work in terms of when to do it.
-
 /**
  * VisualizableSort is an abstract base class which enables a sorting algorithm to expose
  * its data whilst sorting in place, for visualization purposes.
@@ -15,17 +12,38 @@ import java.util.ArrayList;
 public abstract class VisualizableSort implements Runnable {
 
   /**
+   * Number of milliseconds to sleep between sort iterations.
+   */
+  public static int sleepDuration = 500;
+
+  /**
    * ArrayList of data to be sorted in place.
    */
   protected ArrayList<Integer> mData;
-  
+
   /**
-   * Number of milliseconds to sleep between sort iterations.
+   * Index of the most recently changed element.
    */
-  public static volatile int sleepDuration = 500;
+  private int[] mLatestChanges = new int[0];
 
   public VisualizableSort() {
 
+  }
+
+  /**
+   * Causes the sort to sleep and updates the latest changed indices.
+   * @param modifiedIndices The indices of the most recently changed elements.
+   */
+  protected void sortSleep(int ... modifiedIndices) {
+    // Update the latest changed index.
+    mLatestChanges = modifiedIndices;
+
+    // Sleep for the configured amount of time.
+    try {
+      Thread.sleep(sleepDuration);
+    } catch (InterruptedException e) {
+      // Do nothing. We don't really care.
+    }
   }
 
   /**
@@ -34,6 +52,14 @@ public abstract class VisualizableSort implements Runnable {
    */
   public ArrayList<Integer> getData() {
     return mData;
+  }
+
+  /**
+   * Gets the array of indexes which have most recently been changed by the sort.
+   * @return An array of indexes which have been changed most recently.
+   */
+  public int[] getLatestChanges() {
+    return mLatestChanges;
   }
 
   /**
