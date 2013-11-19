@@ -43,6 +43,8 @@ public class Visualizer extends JPanel implements Observer {
   public void paintComponent(Graphics g) {
     super.paintComponent(g);
 
+    int width = Math.max(getWidth(),list.size());
+    int height = getHeight()-10;
     //For loop that sets the color of graphics to yellow if it was the last
     //changed index, otherwise blue, and then draws a filled rectangle the
     //height of the value in the arraylist.
@@ -59,7 +61,7 @@ public class Visualizer extends JPanel implements Observer {
 
       g.setColor(indexChanged ? Color.RED : Color.BLUE);
 
-      g.fillRect(i * (800 / list.size()), 100 - list.get(i), 800 / list.size(), list.get(i));
+      g.fillRect(i * (width / list.size()) + 10, height - list.get(i), width / list.size(), list.get(i));
     }
     g.setColor(Color.BLACK);
   }

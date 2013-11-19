@@ -7,6 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e050ca7-b01d-4350-b798-a108dc723c32" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/code/MainDisplay.java" afterPath="$PROJECT_DIR$/src/code/MainDisplay.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/code/Visualizer.java" afterPath="$PROJECT_DIR$/src/code/Visualizer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -40,10 +41,11 @@
     <file path="/QuickSort.java" changelist="1e050ca7-b01d-4350-b798-a108dc723c32" time="1384892670810" ignored="false" />
     <file path="/VisualizableSort.java" changelist="1e050ca7-b01d-4350-b798-a108dc723c32" time="1384896596347" ignored="false" />
     <file path="/a.java" changelist="1e050ca7-b01d-4350-b798-a108dc723c32" time="1384387813170" ignored="false" />
-    <file path="/Visualizer.java" changelist="1e050ca7-b01d-4350-b798-a108dc723c32" time="1384898885693" ignored="false" />
+    <file path="/Visualizer.java" changelist="1e050ca7-b01d-4350-b798-a108dc723c32" time="1384902262317" ignored="false" />
     <file path="/HeapSort.java" changelist="1e050ca7-b01d-4350-b798-a108dc723c32" time="1384892547722" ignored="false" />
     <file path="/SelectionSort.java" changelist="1e050ca7-b01d-4350-b798-a108dc723c32" time="1384892683326" ignored="false" />
     <file path="/ShellSort.java" changelist="1e050ca7-b01d-4350-b798-a108dc723c32" time="1384891365299" ignored="false" />
+    <file path="/MainDisplay.java" changelist="1e050ca7-b01d-4350-b798-a108dc723c32" time="1384901450172" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,26 +111,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="VisualizableSort.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="VisualizableSort.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/code/VisualizableSort.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="22" selection-start="1217" selection-end="1217" vertical-scroll-proportion="0.0">
+            <state line="52" column="22" selection-start="1217" selection-end="1217" vertical-scroll-proportion="0.53264606">
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1384898305486" expanded="true" signature="725:779" placeholder="/**...*/" />
-                <marker date="1384898305486" expanded="true" signature="895:1036" placeholder="/**...*/" />
-                <marker date="1384898305486" expanded="true" signature="1569:1665" placeholder="/**...*/" />
-                <marker date="1384898305486" expanded="true" signature="1807:1849" placeholder="/**...*/" />
-                <marker date="1384898305486" expanded="true" signature="1937:1951" placeholder="/**...*/" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Visualizer.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Visualizer.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/code/Visualizer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="41" selection-start="1408" selection-end="1408" vertical-scroll-proportion="0.6494845">
+            <state line="44" column="0" selection-start="928" selection-end="928" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainDisplay.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/code/MainDisplay.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="119" column="51" selection-start="4042" selection-end="4042" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -208,7 +214,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/code/Image.java" />
         <option value="$PROJECT_DIR$/src/code/Audio.java" />
         <option value="$PROJECT_DIR$/src/code/Problem.java" />
         <option value="$PROJECT_DIR$/src/code/References.java" />
@@ -223,6 +228,7 @@
         <option value="$PROJECT_DIR$/src/code/QuickSort.java" />
         <option value="$PROJECT_DIR$/src/code/SelectionSort.java" />
         <option value="$PROJECT_DIR$/src/code/VisualizableSort.java" />
+        <option value="$PROJECT_DIR$/src/code/MainDisplay.java" />
         <option value="$PROJECT_DIR$/src/code/Visualizer.java" />
       </list>
     </option>
@@ -601,11 +607,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/META-INF/MANIFEST.MF">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/code/References.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="57" selection-start="193" selection-end="193" vertical-scroll-proportion="0.0">
@@ -695,24 +696,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/code/VisualizableSort.java">
+    <entry file="file://$PROJECT_DIR$/src/code/MainDisplay.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="22" selection-start="1217" selection-end="1217" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1384898305486" expanded="true" signature="725:779" placeholder="/**...*/" />
-            <marker date="1384898305486" expanded="true" signature="895:1036" placeholder="/**...*/" />
-            <marker date="1384898305486" expanded="true" signature="1569:1665" placeholder="/**...*/" />
-            <marker date="1384898305486" expanded="true" signature="1807:1849" placeholder="/**...*/" />
-            <marker date="1384898305486" expanded="true" signature="1937:1951" placeholder="/**...*/" />
-          </folding>
+        <state line="119" column="51" selection-start="4042" selection-end="4042" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/code/Visualizer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="41" selection-start="1408" selection-end="1408" vertical-scroll-proportion="0.6494845">
+        <state line="44" column="0" selection-start="928" selection-end="928" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/code/VisualizableSort.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="22" selection-start="1217" selection-end="1217" vertical-scroll-proportion="0.53264606">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

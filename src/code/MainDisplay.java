@@ -117,6 +117,7 @@ public class MainDisplay extends JInternalFrame implements ActionListener, Chang
       BubbleSort sort = new BubbleSort();
       sort.copyData(dataSet);
       sortOne = new Visualizer(sort);
+      sortOne.setBorder(new TitledBorder("title"));
       executorPool.execute(sort);
 
 
