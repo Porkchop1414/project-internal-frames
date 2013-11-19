@@ -47,6 +47,7 @@ public abstract class VisualizableSort extends Observable implements Runnable {
     mLatestChanges = modifiedIndices;
 
     // Notify the observers of the change.
+    setChanged();
     notifyObservers();
 
     // Sleep for the configured amount of time.

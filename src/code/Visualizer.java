@@ -24,7 +24,7 @@ public class Visualizer extends JPanel implements Observer {
     add(new JLabel(data.getName()));
 
     data.addObserver(this);
-    list = new ArrayList<>(sort.getData());
+    list = sort.getData();
   }
 
   public void close() {
