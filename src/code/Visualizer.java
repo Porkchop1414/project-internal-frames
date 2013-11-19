@@ -46,12 +46,19 @@ public class Visualizer extends JPanel implements Observer {
     //For loop that sets the color of graphics to yellow if it was the last
     //changed index, otherwise blue, and then draws a filled rectangle the
     //height of the value in the arraylist.
+    int[] changes = data.getLatestChanges();
     for (int i = 0; i < list.size(); i++) {
-      if (Arrays.asList(data.getLatestChanges()).contains(i)) {
-        g.setColor(Color.YELLOW);
-      } else {
-        g.setColor(Color.BLUE);
+
+      boolean indexChanged = false;
+      for(int j : changes) {
+        if(i == j) {
+          indexChanged = true;
+          break;
+        }
       }
+
+      g.setColor(indexChanged ? Color.RED : Color.BLUE);
+
       g.fillRect(i * (800 / list.size()), 100 - list.get(i), 800 / list.size(), list.get(i));
     }
     g.setColor(Color.BLACK);
