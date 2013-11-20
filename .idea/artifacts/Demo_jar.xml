@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
-  <artifact type="jar" build-on-make="true" name="Project:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/Project_jar</output-path>
-    <root id="archive" name="Project_jar.jar">
+  <artifact type="jar" build-on-make="true" name="Demo:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Demo_jar</output-path>
+    <root id="archive" name="Demo_jar.jar">
       <element id="module-output" name="project-internal-frames" />
       <element id="directory" name="source">
         <element id="dir-copy" path="$PROJECT_DIR$/src/code" />

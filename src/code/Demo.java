@@ -8,13 +8,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * The main applet for the program. Project is responsible for displaying a menu that is used
+ * The main applet for the program. Demo is responsible for displaying a menu that is used
  * to display JInternalFrames and JPanels.
  *
  * @author Alex Wright, Jordan Schlechte, Tyler Catanzaro
  * @version 1.0
  */
-public class Project extends JApplet implements ActionListener {
+public class Demo extends JApplet implements ActionListener {
   JMenu demosMenu, aboutMenu, algorithmsMenu, dataMenu;
   JMenuItem authorMenuItem, problemMenuItem, referenceMenuItem, helpMenuItem, mainDisplayMenuItem, deselectAllMenuItem, randomMenuItem, bestMenuItem, worstMenuItem;
   JCheckBoxMenuItem bubble, insertion, selection, quick, heap, shell;
@@ -173,12 +173,12 @@ public class Project extends JApplet implements ActionListener {
    * @param args
    */
   public static void main(String args[]) {
-    JFrame frame = new JFrame("Project");
+    JFrame frame = new JFrame("Demo");
     frame.setSize(1200, 800);
     frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     frame.setVisible(true);
 
-    Project demo = new Project();
+    Demo demo = new Demo();
     frame.add(demo);
     demo.init();
     demo.start();
