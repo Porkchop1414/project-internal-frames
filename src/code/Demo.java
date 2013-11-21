@@ -138,7 +138,7 @@ public class Demo extends JApplet implements ActionListener {
       desktopPane.add(help);
       help.toFront();
     } else if(e.getSource() == mainDisplayMenuItem && (mainDisplay == null || mainDisplay.isClosed())) {
-      mainDisplay = new MainDisplay(1000, 700, selectedDataType, sorts);
+      mainDisplay = new MainDisplay(835, 700, selectedDataType, sorts);
       desktopPane.add(mainDisplay);
       mainDisplay.toFront();
     } else if(e.getSource() == deselectAllMenuItem) {

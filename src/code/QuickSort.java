@@ -45,7 +45,7 @@ public class QuickSort extends VisualizableSort {
    * @param left The left bound
    * @param right The right bound
    * @param pivotIndex The current pivot index
-   * @return The index of hte next pivotas
+   * @return The index of the next pivots
    */
   private int partition(ArrayList<Integer> array, int left, int right, int pivotIndex) {
     int pivotValue = array.get(pivotIndex);

@@ -1,6 +1,8 @@
 package code;
 
 import javax.swing.*;
+import javax.swing.border.LineBorder;
+import javax.swing.border.TitledBorder;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -33,6 +35,8 @@ public class Visualizer extends JPanel implements Observer {
 
     data.addObserver(this);
     list = sort.getData();
+
+    setBorder(new TitledBorder(new LineBorder(Color.BLUE), data.getName()));
   }
 
   /**
@@ -65,7 +69,7 @@ public class Visualizer extends JPanel implements Observer {
   public void paintComponent(Graphics g) {
     super.paintComponent(g);
 
-    int width = Math.max(getWidth(),list.size());
+    int width = Math.max(getWidth(), list.size());
     int height = getHeight() - 40;
     //For loop that sets the color of graphics to yellow if it was the last
     //changed index, otherwise blue, and then draws a filled rectangle the
