@@ -157,6 +157,10 @@ public class MainDisplay extends JInternalFrame implements ActionListener, Chang
     selectedDataType = dataType;
   }
 
+  /**
+   * Gets the indices of the selected sorting algorithms.
+   * @return A List of the indices of the algorithms
+   */
   private List<Integer> getSelectedSortIndexes() {
     ArrayList<Integer> indexes = new ArrayList<>();
     if(sorts.get(0).isSelected()) {
@@ -180,6 +184,9 @@ public class MainDisplay extends JInternalFrame implements ActionListener, Chang
     return indexes;
   }
 
+  /**
+   * Creates the sort visualizer panels.
+   */
   private void createVisualizerPanels() {
     remove(sortPanels.get(0));
     remove(sortPanels.get(1));
