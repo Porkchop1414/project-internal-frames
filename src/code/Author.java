@@ -97,9 +97,16 @@ public class Author extends JInternalFrame {
 
     g.setFont(bigBold);
     g.setColor(Color.RED);
-    string = "All code is my own development";
+    string = "All code is our own development";
     y += 70;
     stringWidth = g.getFontMetrics(bigBold).stringWidth(string);
+    g.drawString(string, getWidth() / 2 - (stringWidth / 2), y);
+    
+    g.setFont(bigBold);
+    g.setColor(Color.RED);
+    string = "Tyler Catanzaro worked on the graphs and got them to draw to the screen.";
+    y += 50;
+    stringWidth = g.getFontMetrics(normal).stringWidth(string);
     g.drawString(string, getWidth() / 2 - (stringWidth / 2), y);
   }
 }
