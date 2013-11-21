@@ -26,10 +26,11 @@ public class Help extends JInternalFrame {
     JTextArea textArea = new JTextArea();
     textArea.setMargin(new Insets(10, 10, 10, 10));
     add(new JScrollPane(textArea));
-    String str = "\nThis assignment includes three demos:\n\n";
-    str = str + "1. TODO\n";
-    str = str + "2. TODO\n";
-    str = str + "3. TODO\n";
+    String str = "\nTo Visualize Sorting Algorithms:\n\n";
+    str = str + "1. Launch the Main Display in Demos > Main Display.\n";
+    str = str + "2. Select up to three sorts from Demos > Algorithms.\n";
+    str = str + "3. Select a data set from Demos > Data.\n";
+    str = str + "4. Start the run from the Main Display window.\n";
     textArea.setText(str);
     textArea.setBackground(Color.BLACK);
     textArea.setForeground(Color.CYAN);
