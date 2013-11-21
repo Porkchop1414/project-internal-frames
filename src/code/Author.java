@@ -15,7 +15,7 @@ public class Author extends JInternalFrame {
   /**
    * Fonts for displaying text.
    */
-  Font normal, bold, bigNormal, bigBold;
+  Font small, normal, bold, bigNormal, bigBold;
 
   /**
    * Holds the width of the last string drawn.
@@ -43,6 +43,7 @@ public class Author extends JInternalFrame {
     setOpaque(true);
     setVisible(true);
 
+    small = new Font("Helvetica", Font.PLAIN, 18);
     normal = new Font("Helvetica", Font.PLAIN, 25);
     bold = new Font("TimesRoman", Font.BOLD, 25);
     bigNormal = new Font("Courier", Font.PLAIN, 40);
@@ -91,7 +92,7 @@ public class Author extends JInternalFrame {
     g.setFont(bold);
     g.setColor(Color.MAGENTA);
     string = "Alex Wright, Jordan Schlechte, Tyler Catanzaro";
-    y += 80;
+    y += 60;
     stringWidth = g.getFontMetrics(bold).stringWidth(string);
     g.drawString(string, getWidth() / 2 - (stringWidth / 2), y);
 
@@ -102,11 +103,25 @@ public class Author extends JInternalFrame {
     stringWidth = g.getFontMetrics(bigBold).stringWidth(string);
     g.drawString(string, getWidth() / 2 - (stringWidth / 2), y);
     
-    g.setFont(bigBold);
-    g.setColor(Color.RED);
+    g.setFont(small);
+    g.setColor(Color.BLACK);
     string = "Tyler Catanzaro worked on the graphs and got them to draw to the screen.";
-    y += 50;
-    stringWidth = g.getFontMetrics(normal).stringWidth(string);
+    y += 30;
+    stringWidth = g.getFontMetrics(small).stringWidth(string);
+    g.drawString(string, getWidth() / 2 - (stringWidth / 2), y);
+
+    g.setFont(small);
+    g.setColor(Color.BLACK);
+    string = "Jordan Schlechte implemented the VisualizableSorts.";
+    y += 20;
+    stringWidth = g.getFontMetrics(small).stringWidth(string);
+    g.drawString(string, getWidth() / 2 - (stringWidth / 2), y);
+
+    g.setFont(small);
+    g.setColor(Color.BLACK);
+    string = "Alex Wright organized and implemented the menus and internal frames.";
+    y += 20;
+    stringWidth = g.getFontMetrics(small).stringWidth(string);
     g.drawString(string, getWidth() / 2 - (stringWidth / 2), y);
   }
 }
